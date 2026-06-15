@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Quality Dimensions - ONS Presentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            background-color: #121212;
+            display: grid;
+            gap: 50px;
+            grid-template-columns: 1fr;
+            margin: 0;
+            padding: 40px 0;
+            place-items: center;
+        }
+        .slide-container {
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            border: 1px solid #2d2d2d;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            font-family: 'Urbanist', sans-serif;
+            height: 720px;
+            justify-content: flex-start;
+            padding: 50px 60px;
+            position: relative;
+            width: 1280px;
+        }
+        h1, h2, h3 { color: #ffffff; font-weight: 500; margin: 0; }
+        span { color: #a3e635; }
+        p, li { color: #a3a3a3; font-size: 18px; line-height: 1.4; margin-bottom: 10px; }
+        h1 { font-size: 52px; margin-bottom: 20px; line-height: 1.2; }
+        .slide-title { font-size: 40px; margin-bottom: 30px; border-bottom: 2px solid #2d2d2d; padding-bottom: 15px; }
+        h3 { font-size: 22px; color: #a3e635; margin-bottom: 10px; }
+        .content-area { flex-grow: 1; display: flex; align-items: center; width: 100%; }
+        .two-column { display: flex; gap: 40px; width: 100%; align-items: stretch; }
+        .two-column > div { flex: 1; }
+        .tiled-content { display: flex; gap: 20px; width: 100%; align-items: stretch; }
+        .tile { background-color: #262626; border-radius: 6px; padding: 25px; flex: 1; border-top: 4px solid #a3e635; }
+        .bullet-list { list-style: none; padding: 0; margin: 0; }
+        .bullet-list li { position: relative; padding-left: 30px; margin-bottom: 12px; color: #e5e5e5; font-size: 18px; }
+        .bullet-list li i { position: absolute; left: 0; top: 4px; color: #a3e635; font-size: 16px; }
+        
+        /* Flow Diagram styling */
+        .flow-container { display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #262626; border-radius: 6px; padding: 30px; height: 100%; }
+        .flow-box { background: #1e1e1e; border: 1px solid #404040; padding: 15px 25px; border-radius: 4px; text-align: center; font-weight: 500; font-size: 20px; color: #ffffff; width: 80%; }
+        .flow-box.highlight { border-color: #a3e635; color: #a3e635; }
+        .flow-arrow { color: #a3e635; font-size: 24px; margin: 15px 0; }
+
+        /* DAMA Grid styling */
+        .dama-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
+        .dama-card { background: #262626; border: 1px solid #333; border-radius: 6px; padding: 25px; text-align: center; transition: border-color 0.3s; }
+        .dama-card:hover { border-color: #a3e635; }
+        .dama-card i { font-size: 32px; color: #a3e635; margin-bottom: 15px; }
+        .dama-card h4 { color: #ffffff; margin: 0; font-size: 22px; font-weight: 500; }
+    </style>
+</head>
+<body>
+
+<!-- Slide 0: Title Page -->
+<div class="slide-container" style="justify-content: center; text-align: center;">
+    <div style="max-width: 900px; margin: 0 auto;">
+        <h1 style="font-size: 56px;">Data Quality is Critical for <span>Statistical Outputs</span>.</h1>
+        <p style="font-size: 28px; color: #ffffff; margin-top: 25px; font-weight: 400;">How do Data Quality Dimensions Help?</p>
+        <div style="width: 100px; height: 4px; background-color: #a3e635; margin: 30px auto 0;"></div>
+    </div>
+</div>
+
+<!-- Slide 1: Background -->
+<div class="slide-container">
+    <h2 class="slide-title">Background</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <ul class="bullet-list">
+                    <li><i class="fa-solid fa-chart-line"></i> <strong>Critical Infrastructure:</strong> National decisions rely completely on the accuracy of ONS statistical outputs, including GDP, inflation indices, and demographic shifts.</li>
+                    <li><i class="fa-solid fa-triangle-exclamation"></i> <strong>The Data Reality:</strong> Data in the real world is never perfect. It often arrives with missing values, formatting anomalies, and systemic variations.</li>
+                    <li><i class="fa-solid fa-gavel"></i> <strong>Objective Frameworks:</strong> Data Quality Dimensions remove subjectivity, establishing repeatable, auditable metrics to judge data fitness prior to analytical consumption.</li>
+                </ul>
+            </div>
+            <div>
+                <div class="flow-container">
+                    <div class="flow-box">Raw Data Ingestion</div>
+                    <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+                    <div class="flow-box highlight">Data Quality Dimensions Validation</div>
+                    <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+                    <div class="flow-box">Trusted Statistical Output</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 2: Data Quality Dimension Framework -->
+<div class="slide-container">
+    <h2 class="slide-title">Data Quality Dimensions</h2>
+    <div class="content-area" style="flex-direction: column; align-items: flex-start; justify-content: center;">
+        <p style="font-size: 22px; color: #ffffff; margin-bottom: 35px; max-width: 1000px;">
+            According to <strong>gov.uk</strong>, Data quality dimensions will help you assess if your data is good enough to use or if you need improvements. There are <strong>6 core dimensions</strong> as defined by the Data Management Association (DAMA UK):
+        </p>
+        <div class="dama-grid">
+            <div class="dama-card"><i class="fa-solid fa-bullseye"></i><h4>Accuracy</h4></div>
+            <div class="dama-card"><i class="fa-solid fa-star-half-stroke"></i><h4>Completeness</h4></div>
+            <div class="dama-card"><i class="fa-solid fa-fingerprint"></i><h4>Uniqueness</h4></div>
+            <div class="dama-card"><i class="fa-solid fa-code-compare"></i><h4>Consistency</h4></div>
+            <div class="dama-card"><i class="fa-solid fa-clock"></i><h4>Timeliness</h4></div>
+            <div class="dama-card"><i class="fa-solid fa-check-double"></i><h4>Validity</h4></div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 3: Dimensions in Data Life Cycle -->
+<div class="slide-container" style="height: auto; min-height: 720px; padding-bottom: 40px;">
+    <h2 class="slide-title">Dimensions in Data Life Cycle</h2>
+    <div class="content-area">
+        <div class="tiled-content">
+            <!-- Accuracy -->
+            <div class="tile">
+                <h3>Accuracy</h3>
+                <p style="font-size: 15px; min-height: 54px;">Measures how closely data reflects real world variables. <em>(e.g., correct decimals, updated data, no man 1000cm tall)</em></p>
+                <h4 style="color:#fff; font-size:16px; margin:15px 0 5px;">How:</h4>
+                <ul class="bullet-list" style="font-size:14px;">
+                    <li style="font-size:14px; padding-left:20px;"><i class="fa-solid fa-square-check" style="font-size:14px;"></i> Automated ingestion checks to flag outliers</li>
+                    <li style="font-size:14px; padding-left:20px;"><i class="fa-solid fa-square-check" style="font-size:14px;"></i> Protecting integrity during manipulation</li>
+                    <li style="font-size:14px; padding-left:20px;"><i class="fa-solid fa-square-check" style="font-size:14px;"></i> Mapping updates in business processes</li>
+                </ul>
+                <p style="font-size:14px; margin-top:15px; color:#e5e5e5;"><strong>Impact:</strong> Eliminates systemic measurement drift, ensuring absolute precision of national stats.</p>
+            </div>
+            
+            <!-- Validity -->
+            <div class="tile" style="border-top-color: #60a5fa;">
+                <h3 style="color: #60a5fa;">Validity</h3>
+                <p style="font-size: 15px; min-height: 54px;">Verifies adherence to structural schemas. <em>(e.g., contains "*@*", postcodes match Royal Mail list, uniform units)</em></p>
+                <h4 style="color:#fff; font-size:16px; margin:15px 0 5px;">How:</h4>
+                <ul class="bullet-list" style="font-size:14px;">
+                    <li style="font-size:14px; padding-left:20px;"><i class="fa-solid fa-square-check" style="color:#60a5fa; font-size:14px;"></i> Landing zone validation flags (e.g., YYYY-MM-DD)</li>
+                    <li style="font-size:14px; padding-left:20px;"><i class="fa-solid fa-square-check" style="color:#60a5fa; font-size:14px;"></i> SQL and regex parsing to measure row validity %</li>
+                </ul>
+                <p style="font-size:14px; margin-top:28px; color:#e5e5e5;"><strong>Impact:</strong> Catches anomalies pre-processing, allowing cross-source integration and automation.</p>
+            </div>
+            
+            <!-- Completeness -->
+            <div class="tile" style="border-top-color: #fbbf24;">
+                <h3 style="color: #fbbf24;">Completeness</h3>
+                <p style="font-size: 15px; min-height: 54px;">Ensures no critical records or values are missing. <em>(e.g., medical record missing allergy data)</em></p>
+                <h4 style="color:#fff; font-size:16px; margin:15px 0 5px;">How:</h4>
+                <ul class="bullet-list" style="font-size:14px;">
+                    <li style="font-size:14px; padding-left:20px;"><i class="fa-solid fa-square-check" style="color:#fbbf24; font-size:14px;"></i> Identifying critical data elements</li>
+                    <li style="font-size:14px; padding-left:20px;"><i class="fa-solid fa-square-check" style="color:#fbbf24; font-size:14px;"></i> Setting up null-value flags at ingestion stage</li>
+                    <li style="font-size:14px; padding-left:20px;"><i class="fa-solid fa-square-check" style="color:#fbbf24; font-size:14px;"></i> Governance models to handle missing data by severity</li>
+                </ul>
+                <p style="font-size:14px; margin-top:15px; color:#e5e5e5;"><strong>Impact:</strong> Prevents hidden biases in population or economic metrics by identifying intake gaps.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 4: Strategic Value to Data Governance -->
+<div class="slide-container">
+    <h2 class="slide-title">Strategic Value to Data Governance</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <ul class="bullet-list">
+                    <li><i class="fa-solid fa-shield-halved"></i> <strong>Proactive Ingestion Frameworks:</strong> Shifting from reactive cleaning to automated validation rules directly at the data integration layer.</li>
+                    <li><i class="fa-solid fa-box-archive"></i> <strong>Metadata Standardization:</strong> Storing quality scores within internal catalogues to make datasets discoverable, auditable, and transparent.</li>
+                    <li><i class="fa-solid fa-gauge-high"></i> <strong>Resource Efficiency:</strong> Eliminating manual preparation, allowing statistical analysts to dedicate time strictly to interpretation.</li>
+                </ul>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <p style="background-color: #262626; padding: 30px; border-left: 4px solid #a3e635; color: #ffffff; font-size: 22px; font-style: italic; border-radius: 0 6px 6px 0; line-height: 1.5;">
+                    "By treating data quality as a measurable metric across the lifecycle, we preserve public trust and safeguard the ONS's standing as a provider of world-class official statistics."
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
